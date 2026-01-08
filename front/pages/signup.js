@@ -12,7 +12,7 @@ const ErrorMessage = styled.div`
   color: red;
 `;
 
-const signup = () => {
+const Signup = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const signUpLoading = useSelector((state) => state.user.signUpLoading);
@@ -146,21 +146,4 @@ const signup = () => {
   );
 };
 
-// export const getServerSideProps = wrapper.getServerSideProps(
-//   (store) => async (context) => {
-//     const cookie = context.req ? context.req.headers.cookie : "";
-//     axios.defaults.headers.Cookie = "";
-//     if (context.req && cookie) {
-//       axios.defaults.headers.Cookie = cookie;
-//     }
-//     store.dispatch({ type: LOAD_MY_INFO_REQUEST });
-//     store.dispatch(END);
-//     await store.sagaTask.toPromise();
-
-//     return {
-//       props: {},
-//     };
-//   }
-// );
-
-export default signup;
+export default Signup;
