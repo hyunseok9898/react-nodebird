@@ -23,14 +23,14 @@ const Home = () => {
     }
   }, [retweetError]);
 
-  // useEffect(() => {
-  //   dispatch({
-  //     type: LOAD_MY_INFO_REQUEST,
-  //   });
-  //   dispatch({
-  //     type: LOAD_POSTS_REQUEST,
-  //   });
-  // }, []);
+  useEffect(() => {
+    dispatch({
+      type: LOAD_MY_INFO_REQUEST,
+    });
+    dispatch({
+      type: LOAD_POSTS_REQUEST,
+    });
+  }, []);
 
   useEffect(() => {
     function onScroll() {
@@ -62,24 +62,5 @@ const Home = () => {
     </AppLayout>
   );
 };
-
-export const getServerSideProps = wrapper.getServerSideProps(
-  (store) => async (context) => {
-    const cookie = context.req ? context.req.headers.cookie : "";
-    axios.defaults.headers.Cookie = "";
-    if (context.req && cookie) {
-      axios.defaults.headers.Cookie = cookie;
-    }
-    store.dispatch({ type: LOAD_MY_INFO_REQUEST });
-    store.dispatch({ type: LOAD_POSTS_REQUEST });
-
-    store.dispatch(END);
-    await store.sagaTask.toPromise();
-
-    return {
-      props: {},
-    };
-  }
-);
 
 export default Home;
