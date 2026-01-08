@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "dev": "nodemon app",
     "start": "cross-env NODE_ENV=production pm2 start app.js"
   },
   "author": "HyunSeok",
