@@ -1,7 +1,8 @@
 import axios from "axios";
 import { all, call, fork, put, takeLatest, delay } from "redux-saga/effects";
+import { backUrl } from "../config/config";
 
-axios.defaults.baseURL = "http://localhost:3065";
+axios.defaults.baseURL = backUrl;
 axios.defaults.withCredentials = true;
 
 import postSaga from "./post";
