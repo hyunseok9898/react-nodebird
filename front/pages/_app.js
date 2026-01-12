@@ -8,10 +8,10 @@ const NodeBird = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <Global />
         <meta charSet="utf-8" />
         <title>NodeBird</title>
       </Head>
+      <Global />
       <Component {...pageProps} />
     </>
   );
